@@ -1,5 +1,5 @@
 ﻿using BontempzHelpers.Geography;
-using System.Data.Entity.Spatial;
+using NetTopologySuite.Geometries;
 
 namespace BontempzGeography.DataSource
 {
@@ -7,19 +7,19 @@ namespace BontempzGeography.DataSource
     {
         public Guid Id { get; set; }
         public string? Name { get; set; }
-        public DbGeography Bounds { get; set; }
+        public Polygon Bounds { get; set; }
         public string? Municipality { get; set; }
         public string? StateCode { get; set; }
         public string? CountryCode { get; set; }
 
-        public District(string id, string countryCode, string name, string municipality, string stateCode, string bounds, int SRID = 4326)
+        public District(string id, string countryCode, string name, string municipality, string stateCode, string bounds)
         {
             Id = Guid.Parse(id);
             CountryCode = countryCode;
             Name = name;
             Municipality = municipality;
             StateCode = stateCode;
-            Bounds = GeographyFunctions.GetGeographyArea(bounds, SRID);
+            Bounds = GeographyFunctions.GetGeographyArea(bounds);
         }
     }
 
