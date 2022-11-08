@@ -8,16 +8,16 @@ namespace BontempzGeography.DataSource
         public Guid Id { get; set; }
         public string? Name { get; set; }
         public Polygon Bounds { get; set; }
-        public string? Municipality { get; set; }
+        public string? MunicipalDistrict { get; set; }
         public string? StateCode { get; set; }
         public string? CountryCode { get; set; }
 
-        public District(string id, string countryCode, string name, string municipality, string stateCode, string bounds)
+        public District(string id, string countryCode, string name, string municipalDistrict, string stateCode, string bounds)
         {
             Id = Guid.Parse(id);
             CountryCode = countryCode;
             Name = name;
-            Municipality = municipality;
+            MunicipalDistrict = municipalDistrict;
             StateCode = stateCode;
             Bounds = GeographyFunctions.GetGeographyArea(bounds);
         }
@@ -32,7 +32,7 @@ namespace BontempzGeography.DataSource
 
         public static List<District> List(string municipality)
         {
-            return districtList.Where(_ => _.Municipality == municipality).ToList();
+            return districtList.Where(_ => _.MunicipalDistrict == municipality).ToList();
         }
 
         public static District GetById(string id)
@@ -55,6 +55,7 @@ namespace BontempzGeography.DataSource
             new District("3141c61f-8102-4ea9-ab94-369529dbb2af", "AU", "Melbourne CBD", "Melbourne", "VIC", "144.9498796 -37.8131744, 144.9554586 -37.8233109, 144.9712086 -37.8190395, 144.9757576 -37.8160223, 144.9714661 -37.8071054, 144.9714661 -37.8071054, 144.9498796 -37.8131744, 144.9498796 -37.8131744"),
             new District("736a634b-96c8-46a2-ba9f-e40b50aadcd1", "AU", "Richmond", "Melbourne", "VIC", "144.9915504 -37.8089024, 144.9879456 -37.8299548, 144.9916363 -37.8331071, 144.9949408 -37.8340223, 144.9981594 -37.8340900, 144.9995756 -37.8274126, 145.0079441 -37.8288024, 145.0106907 -37.8111062, 144.9915504 -37.8089024"),
             new District("b6a3839a-02e6-440c-93b0-52db3c530f8f", "AU", "St Kilda", "Melbourne", "VIC", "144.9828172 -37.8556266, 144.9676466 -37.8638431, 144.9761438 -37.8722788, 144.9870658 -37.8681966, 144.9828172 -37.8556266"),
+            new District("39c21bc3-0351-4fa5-8c1d-5a47f068c9aa", "AU", "Wilsons Promontory", "Gippsland", "VIC", "146.0440063 -38.9177500, 146.2294006, -39.1907552, 146.5850830 -39.1801107, 146.4848328 -38.7797814, 146.3310242 -38.7465863, 146.0440063 -38.9177500")
         };
 
     }
