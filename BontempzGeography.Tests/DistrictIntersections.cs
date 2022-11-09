@@ -1,6 +1,6 @@
 using BontempzGeography.DataSource;
-using BontempzHelpers.Geography;
-using Microsoft.SqlServer.Types;
+using BontempzHelpers.Models.Locations;
+using NetTopologySuite.Geometries;
 
 namespace BontempzGeography.Tests
 {
@@ -8,11 +8,11 @@ namespace BontempzGeography.Tests
     {
         const string FunnyFailMessage = "Something is rotten in the State of Denmark.";
 
-        SqlGeography bridieOreillys = GeographyFunctions.GetGeographyPoint(-37.843548, 144.994863).SqlGeography;
-        SqlGeography fifthProvince = GeographyFunctions.GetGeographyPoint(-37.8595190, 144.9775000).SqlGeography;
-        SqlGeography goatHouse = GeographyFunctions.GetGeographyPoint(-37.8844332, 145.0008658).SqlGeography;
-        SqlGeography laDiDa = GeographyFunctions.GetGeographyPoint(-37.8154925, 144.9555337).SqlGeography;
-        SqlGeography youngAndJackson = GeographyFunctions.GetGeographyPoint(-37.8174228, 144.9671155).SqlGeography;
+        Point bridieOreillys = new GeographicPoint(-37.843548, 144.994863).Point;
+        Point fifthProvince = new GeographicPoint(-37.8595190, 144.9775000).Point;
+        Point goatHouse = new GeographicPoint(-37.8844332, 145.0008658).Point;
+        Point laDiDa = new GeographicPoint(-37.8154925, 144.9555337).Point;
+        Point youngAndJackson = new GeographicPoint(-37.8174228, 144.9671155).Point;
 
         [Fact]
         public void ValidateMelbourneCbdVenues()
@@ -31,14 +31,14 @@ namespace BontempzGeography.Tests
             FailDistrictContainsPoint(goatHouse, melbourneCbd);
         }
 
-        private void AssertDistrictContainsPoint(SqlGeography point, District district)
+        private void AssertDistrictContainsPoint(Point point, District district)
         {
-            Assert.True((bool)point.STIntersects(district.SqlGeography), String.Format("Point at {0} Lat {1} Long is not within {2}.", point.Lat, point.Long, district.Name));
+            Assert.True((bool)point.Intersects(district.Bounds), String.Format("Point at {0} Lat {1} Long is not within {2}.", point.X, point.Y, district.Name));
         }
 
-        private void FailDistrictContainsPoint(SqlGeography point, District district)
+        private void FailDistrictContainsPoint(Point point, District district)
         {
-            Assert.False((bool)point.STIntersects(district.SqlGeography), String.Format("Point at {0} Lat {1} Long IS within {2}.", point.Lat, point.Long, district.Name));
+            Assert.False((bool)point.Intersects(district.Bounds), String.Format("Point at {0} Lat {1} Long IS within {2}.", point.X, point.Y, district.Name));
         }
     }
 }
