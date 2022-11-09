@@ -1,4 +1,4 @@
-﻿using BontempzGeography.Functions;
+﻿using BontempzGeography.Models;
 using NetTopologySuite.Geometries;
 
 namespace BontempzGeography.DataSource
@@ -21,7 +21,7 @@ namespace BontempzGeography.DataSource
             Name = name;
             MunicipalDistrict = municipalDistrict;
             StateCode = stateCode;
-            Bounds = GeographyFunctions.GetGeographicArea(bounds);
+            Bounds = new GeographicArea(bounds).Area;
         }
     }
 

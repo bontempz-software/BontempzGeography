@@ -51,8 +51,8 @@ namespace BontempzGeography.Tests
                 new GeographicPoint(-37.8828475, 144.9959922),
             };
 
-            Polygon ghrDistrict = GeographyFunctions.GetGeographicArea(gleyHuntlyRoadBounds);
-            Polygon ghrDistrictGeo = GeographyFunctions.GetGeographicArea(gleyHuntlyRoadBoundsGeo);
+            Polygon ghrDistrict = new GeographicArea(gleyHuntlyRoadBounds).Area;
+            Polygon ghrDistrictGeo = new GeographicArea(gleyHuntlyRoadBoundsGeo).Area;
 
             Assert.True(goatHouse.Intersects(ghrDistrict), "Goathouse fails to intersect GHR West.");
             Assert.False(bridieOreillys.Intersects(ghrDistrict), "Bridie's falsely intersects with GHR West.");
