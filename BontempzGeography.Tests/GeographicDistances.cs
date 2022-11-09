@@ -1,6 +1,6 @@
-﻿using BontempzHelpers.Enums.UnitsOfMeasurement;
-using BontempzHelpers.Geography;
-using BontempzHelpers.Models.Locations;
+﻿using BontempzGeography.Enums.UnitsOfMeasurement;
+using BontempzGeography.Functions;
+using BontempzGeography.Models;
 
 namespace BontempzGeography.Tests
 {

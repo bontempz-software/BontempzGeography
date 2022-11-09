@@ -1,5 +1,5 @@
 using BontempzGeography.DataSource;
-using BontempzHelpers.Models.Locations;
+using BontempzGeography.Models;
 using NetTopologySuite.Geometries;
 
 namespace BontempzGeography.Tests

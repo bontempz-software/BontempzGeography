@@ -1,13 +1,13 @@
-﻿using BontempzHelpers.Enums.UnitsOfMeasurement;
-using BontempzHelpers.Geography;
-using BontempzHelpers.Models.Locations;
+﻿using BontempzGeography.Enums.UnitsOfMeasurement;
+using BontempzGeography.Functions;
+using BontempzGeography.Models;
 using NetTopologySuite.Geometries;
 
 namespace BontempzGeography.Tests
 {
     public class GeographicAreasMelbourne
     {
-        Polygon melbourneCBD = GeographyFunctions.GetGeographyArea("144.9498796 -37.8131744, 144.9554586 -37.8233109, 144.9712086 -37.8190395, 144.9757576 -37.8160223, 144.9714661 -37.8071054, 144.9714661 -37.8071054, 144.9498796 -37.8131744, 144.9498796 -37.8131744");
+        Polygon melbourneCBD = GeographyFunctions.GetGeographicArea("144.9498796 -37.8131744, 144.9554586 -37.8233109, 144.9712086 -37.8190395, 144.9757576 -37.8160223, 144.9714661 -37.8071054, 144.9714661 -37.8071054, 144.9498796 -37.8131744, 144.9498796 -37.8131744");
 
         GeographicPoint parliamentStation = new GeographicPoint(-37.8140185, 144.9587952);
         GeographicPoint tramStopBourkeStreetSC = new GeographicPoint(-37.8169623, 144.9516348);
@@ -43,16 +43,16 @@ namespace BontempzGeography.Tests
 
             List<GeographicPoint> gleyHuntlyRoadBoundsGeo = new List<GeographicPoint>()
             {
-                GeographyFunctions.GetGeographyPoint(-37.8828475, 144.9959922),
-                GeographyFunctions.GetGeographyPoint(-37.8843887, 144.996078),
-                GeographyFunctions.GetGeographyPoint(-37.8859129, 145.0016999),
-                GeographyFunctions.GetGeographyPoint(-37.8868443, 145.0154972),
-                GeographyFunctions.GetGeographyPoint(-37.8854726, 145.0157118),
-                GeographyFunctions.GetGeographyPoint(-37.8828475, 144.9959922),
+                new GeographicPoint(-37.8828475, 144.9959922),
+                new GeographicPoint(-37.8843887, 144.996078),
+                new GeographicPoint(-37.8859129, 145.0016999),
+                new GeographicPoint(-37.8868443, 145.0154972),
+                new GeographicPoint(-37.8854726, 145.0157118),
+                new GeographicPoint(-37.8828475, 144.9959922),
             };
 
-            Polygon ghrDistrict = GeographyFunctions.GetGeographyArea(gleyHuntlyRoadBounds);
-            Polygon ghrDistrictGeo = GeographyFunctions.GetGeographyArea(gleyHuntlyRoadBoundsGeo);
+            Polygon ghrDistrict = GeographyFunctions.GetGeographicArea(gleyHuntlyRoadBounds);
+            Polygon ghrDistrictGeo = GeographyFunctions.GetGeographicArea(gleyHuntlyRoadBoundsGeo);
 
             Assert.True(goatHouse.Intersects(ghrDistrict), "Goathouse fails to intersect GHR West.");
             Assert.False(bridieOreillys.Intersects(ghrDistrict), "Bridie's falsely intersects with GHR West.");

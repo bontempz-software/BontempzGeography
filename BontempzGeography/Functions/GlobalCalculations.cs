@@ -1,12 +1,12 @@
-﻿using BontempzHelpers.Enums.UnitsOfMeasurement;
-using BontempzHelpers.Models.Locations;
+﻿using BontempzGeography.Enums.UnitsOfMeasurement;
+using BontempzGeography.Models;
 using NetTopologySuite.Geometries;
 
 namespace BontempzGeography.Functions
 {
     public static class GeographyFunctions
     {
-        public static Polygon GetGeographyArea(string coordPairsLongLatCommaSeparated)
+        public static Polygon GetGeographicArea(string coordPairsLongLatCommaSeparated)
         {
             string removeSpaceBetweenPairs = coordPairsLongLatCommaSeparated.Replace(", ", ",");
             string[] splitIntoPairs = removeSpaceBetweenPairs.Split(",");
@@ -21,10 +21,10 @@ namespace BontempzGeography.Functions
                 index++;
             }
 
-            return GetGeographyArea(coordinates);
+            return GetGeographicArea(coordinates);
         }
 
-        public static Polygon GetGeographyArea(List<GeographicPoint> pointList)
+        public static Polygon GetGeographicArea(List<GeographicPoint> pointList)
         {
             Coordinate[] coordinates = new Coordinate[pointList.Count()];
             int index = 0;
@@ -35,10 +35,10 @@ namespace BontempzGeography.Functions
                 index++;
             }
 
-            return GetGeographyArea(coordinates);
+            return GetGeographicArea(coordinates);
         }
 
-        public static Polygon GetGeographyArea(List<Point> pointList)
+        public static Polygon GetGeographicArea(List<Point> pointList)
         {
             Coordinate[] coordinates = new Coordinate[pointList.Count()];
             int index = 0;
@@ -49,27 +49,14 @@ namespace BontempzGeography.Functions
                 index++;
             }
 
-            return GetGeographyArea(coordinates);
+            return GetGeographicArea(coordinates);
         }
 
-        public static Polygon GetGeographyArea(Coordinate[] coordinates)
+        public static Polygon GetGeographicArea(Coordinate[] coordinates)
         {
             LinearRing linearRing = new LinearRing(coordinates);
 
             return new Polygon(linearRing);
-        }
-
-        public static GeographicPoint GetGeographyPoint(double latitude, double longitude, int srid = 4326)
-        {
-            GeographicPoint pointModel = new GeographicPoint(latitude, longitude)
-            {
-                Latitude = latitude,
-                Longitude = longitude,
-                SRID = srid,
-                Point = new Point(longitude, latitude, srid)
-            };
-
-            return pointModel;
         }
 
         public static double DistanceBetweenPoints(GeographicPoint origin, GeographicPoint destination, Distance distance = Distance.Metre)

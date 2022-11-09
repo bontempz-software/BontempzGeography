@@ -1,4 +1,4 @@
-﻿using BontempzHelpers.Structs;
+﻿using BontempzGeography.Structs;
 
 namespace BontempzGeography.DataSource
 {
