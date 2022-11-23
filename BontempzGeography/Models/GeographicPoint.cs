@@ -4,9 +4,18 @@ namespace BontempzGeography.Models
 {
     public class GeographicPoint
     {
+        public GeographicPoint(Point point, int srid = 4326)
+        {
+            Id = Guid.NewGuid();
+            Latitude = point.Y;
+            Longitude = point.X;
+            SRID = srid;
+            Point = new Point(point.X, point.Y) { SRID = srid };
+        }
+
         public GeographicPoint(Guid id, double latitude, double longitude, int srid = 4326)
         {
-            Id= id;
+            Id = id;
             Latitude = latitude;
             Longitude = longitude;
             SRID = srid;

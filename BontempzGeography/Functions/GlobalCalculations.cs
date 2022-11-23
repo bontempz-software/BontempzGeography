@@ -29,7 +29,7 @@ namespace BontempzGeography.Functions
             Coordinate[] coordinates = new Coordinate[pointList.Count()];
             int index = 0;
 
-            foreach(GeographicPoint point in pointList)
+            foreach (GeographicPoint point in pointList)
             {
                 coordinates[index] = new Coordinate(point.Longitude, point.Latitude);
                 index++;
@@ -57,6 +57,16 @@ namespace BontempzGeography.Functions
             LinearRing linearRing = new LinearRing(coordinates);
 
             return new Polygon(linearRing);
+        }
+
+        public static double DistanceBetweenPoints(GeographicPoint origin, Point destination, Distance distance = Distance.Metre)
+        {
+            return DistanceBetweenPoints(origin, new GeographicPoint(destination.Y, destination.X), distance);
+        }
+
+        public static double DistanceBetweenPoints(Point origin, GeographicPoint destination, Distance distance = Distance.Metre)
+        {
+            return DistanceBetweenPoints(new GeographicPoint(origin.Y, origin.X), destination, distance);
         }
 
         public static double DistanceBetweenPoints(GeographicPoint origin, GeographicPoint destination, Distance distance = Distance.Metre)

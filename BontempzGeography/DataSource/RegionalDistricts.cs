@@ -1,4 +1,5 @@
-﻿using BontempzGeography.Models;
+﻿using BontempzGeography.Functions;
+using BontempzGeography.Models;
 using NetTopologySuite.Geometries;
 
 namespace BontempzGeography.DataSource
@@ -45,6 +46,13 @@ namespace BontempzGeography.DataSource
         public static District GetById(Guid id)
         {
             return municipalDistrictList.First(_ => _.Id == id);
+        }
+
+        public static Polygon GetSqlReadyPolygonById(Guid id)
+        {
+            var district = municipalDistrictList.First(_ => _.Id == id);
+
+            return SqlConversions.GetPolygon(district.Bounds);
         }
 
         public static List<District> ListByMunicipalDistrictId(string municipalDistrictId)
