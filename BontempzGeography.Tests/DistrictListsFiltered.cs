@@ -10,18 +10,18 @@ namespace BontempzGeography.Tests
             string melbourneCbdStringId = "e5407fb4-6027-4b5d-aa78-d89316fd2721";
             string melbourneMunicipalDistrictId = "9c967a90-32e8-474a-b20b-cf1c5b4fadbf";
 
-            District melbourneCbdByString = RegionalDistricts.GetById(melbourneCbdStringId);
-            District melbourneCbdByGuid = RegionalDistricts.GetById(Guid.Parse(melbourneCbdStringId));
+            MunicipalDistrict melbourneCbdByString = MunicipalDistrict.GetById(melbourneCbdStringId);
+            MunicipalDistrict melbourneCbdByGuid = MunicipalDistrict.GetById(Guid.Parse(melbourneCbdStringId));
 
             Assert.True(melbourneCbdByString == melbourneCbdByGuid, "The objects are not equal.");
 
-            List<District> melbsMDByString = RegionalDistricts.ListByMunicipalDistrictId(melbourneMunicipalDistrictId);
-            List<District> melbsMDByGuid = RegionalDistricts.ListByMunicipalDistrictId(Guid.Parse(melbourneMunicipalDistrictId));
+            List<MunicipalDistrict> melbsMDByString = MunicipalDistrict.ListByMunicipalDistrictId(melbourneMunicipalDistrictId);
+            List<MunicipalDistrict> melbsMDByGuid = MunicipalDistrict.ListByMunicipalDistrictId(Guid.Parse(melbourneMunicipalDistrictId));
 
             Assert.True(melbsMDByString.Count() == melbsMDByGuid.Count(), "Danger Will Robinson!");
-            Assert.True(melbsMDByGuid.Any(_ => _.Name == "Melbourne CBD"), "Danger Will Robinson!");
+            Assert.True(melbsMDByGuid.Any(_ => _.DistrictName == "Melbourne CBD"), "Danger Will Robinson!");
 
-            Dictionary<string, string> supported = RegionalDistricts.SupportedMunicipalDistricts();
+            Dictionary<string, string> supported = RegionalDistrict.Supported();
             int validSupported = 2;
 
             Assert.True(supported.Count() == validSupported, 

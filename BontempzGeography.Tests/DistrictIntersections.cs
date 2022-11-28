@@ -17,9 +17,9 @@ namespace BontempzGeography.Tests
         [Fact(DisplayName = "Validate Melbourne CBD Venues")]
         public void ValidateMelbourneCbdVenues()
         {
-            var districtList = RegionalDistricts.List();
-            var districtsMelbourneMetro = RegionalDistricts.List("Melbourne");
-            var melbourneCbd = RegionalDistricts.GetById("3141c61f-8102-4ea9-ab94-369529dbb2af");
+            var districtList = MunicipalDistrict.List();
+            var districtsMelbourneMetro = MunicipalDistrict.List("Melbourne");
+            var melbourneCbd = MunicipalDistrict.GetById("3141c61f-8102-4ea9-ab94-369529dbb2af");
 
             Assert.True(districtList.Any(), FunnyFailMessage);
             Assert.True(districtsMelbourneMetro.Any(), FunnyFailMessage);
@@ -31,14 +31,14 @@ namespace BontempzGeography.Tests
             FailDistrictContainsPoint(goatHouse, melbourneCbd);
         }
 
-        private void AssertDistrictContainsPoint(Point point, District district)
+        private void AssertDistrictContainsPoint(Point point, MunicipalDistrict district)
         {
-            Assert.True(point.Intersects(district.Bounds), String.Format("Point at {0} Lat {1} Long is not within {2}.", point.X, point.Y, district.Name));
+            Assert.True(point.Intersects(district.Bounds), String.Format("Point at {0} Lat {1} Long is not within {2}.", point.X, point.Y, district.DistrictName));
         }
 
-        private void FailDistrictContainsPoint(Point point, District district)
+        private void FailDistrictContainsPoint(Point point, MunicipalDistrict district)
         {
-            Assert.False(point.Intersects(district.Bounds), String.Format("Point at {0} Lat {1} Long IS within {2}.", point.X, point.Y, district.Name));
+            Assert.False(point.Intersects(district.Bounds), String.Format("Point at {0} Lat {1} Long IS within {2}.", point.X, point.Y, district.DistrictName));
         }
     }
 }

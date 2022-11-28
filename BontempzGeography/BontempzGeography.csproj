@@ -10,7 +10,7 @@
 		<Title>Bontempz Geography</Title>
 		<Description>BETA release for testing with related applications. Working SqlGeography support.</Description>
 		<PackageId>BontempzGeography</PackageId>
-		<Version>6.0.11.1</Version>
+		<Version>6.0.11.2</Version>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
 		<FileVersion>1.0.0.0</FileVersion>
 		<Copyright>All Rights Reserved - Copyright 2022</Copyright>
