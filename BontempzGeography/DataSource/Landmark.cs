@@ -18,6 +18,11 @@ namespace BontempzGeography.DataSource
             Location = new GeographicPoint(latitude, longitude).Point;
         }
 
+        public static Landmark GetById(Guid landmarkId)
+        {
+            return landmarks.Where(_ => _.LandmarkId == landmarkId).First();
+        }
+
         public static List<Landmark> List()
         {
             return landmarks.ToList();
@@ -42,9 +47,12 @@ namespace BontempzGeography.DataSource
             new Landmark("50db8f48-b088-403a-810c-edc5c80de247", "3141c61f-8102-4ea9-ab94-369529dbb2af", "Flagstaff Station", -37.8119687, 144.9563089),
             new Landmark("c37105e9-d103-4e92-b881-f17820437f71", "3141c61f-8102-4ea9-ab94-369529dbb2af", "Southern Cross Station", -37.8184123, 144.9536884),
             new Landmark("c5aa7c2b-18ab-453c-93a9-89ec0fe8efa1", "ddb28e0d-5e70-4a67-8f7a-30346db29820", "South Yarra Station", -37.8389876, 144.9922103),
+            new Landmark("55c86875-706c-408f-aff3-fb93e53f98fc", "736a634b-96c8-46a2-ba9f-e40b50aadcd1", "Richmond Station", -37.8245822, 144.998001),
+            new Landmark("466b89cd-a1d2-43a9-8d23-4ec714e4dc8d", "736a634b-96c8-46a2-ba9f-e40b50aadcd1", "East Richmond Station", -37.8263486, 144.9972507),
+            new Landmark("c8a3aae6-0b07-4e21-9279-9e7d7bc49f35", "736a634b-96c8-46a2-ba9f-e40b50aadcd1", "North Richmond Station", -37.8104, 144.9924),
+            new Landmark("bf30aa7f-e506-444a-959b-680f31c23fcc", "736a634b-96c8-46a2-ba9f-e40b50aadcd1", "Burnley Station", -37.8275297, 145.0071636),
             new Landmark("0a571af3-ba13-4a8d-9b92-856706dc48da", "ddb28e0d-5e70-4a67-8f7a-30346db29820", "Prahran Station", -37.8495187, 144.9898821),
             new Landmark("ebeae039-4838-407f-97d3-10ddecb73fd6", "ddb28e0d-5e70-4a67-8f7a-30346db29820", "Windsor Station", -37.8563445, 144.9924383),
-            new Landmark("66c48933-36a3-433a-9bb4-6f36c4b38756", "ddb28e0d-5e70-4a67-8f7a-30346db29820", "Windsor Station", -37.8563445, 144.9924383),
             new Landmark("b1bfa188-e5bf-4c4c-bdb0-82caa21e4140", "9f865fce-bb67-47a4-93b8-ac1be041f79a", "Elsternwick Station", -37.8843019, 145.0001201),
         };
     }

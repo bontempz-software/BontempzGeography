@@ -61,16 +61,22 @@ namespace BontempzGeography.Functions
 
         public static double DistanceBetweenPoints(GeographicPoint origin, Point destination, Distance distance = Distance.Metre)
         {
+            if(origin == null || destination == null) return -0;
+
             return DistanceBetweenPoints(origin, new GeographicPoint(destination.Y, destination.X), distance);
         }
 
         public static double DistanceBetweenPoints(Point origin, GeographicPoint destination, Distance distance = Distance.Metre)
         {
+            if (origin == null || destination == null) return -0;
+
             return DistanceBetweenPoints(new GeographicPoint(origin.Y, origin.X), destination, distance);
         }
 
         public static double DistanceBetweenPoints(GeographicPoint origin, GeographicPoint destination, Distance distance = Distance.Metre)
         {
+            if (origin == null || destination == null) return -0;
+
             double radiusOfEarth = 6371000; // Radius of Earth in Metres.
 
             switch (distance)
