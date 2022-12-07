@@ -63,9 +63,9 @@ namespace BontempzGeography.DataSource
             new Landmark("b1bfa188-e5bf-4c4c-bdb0-82caa21e4140", "9f865fce-bb67-47a4-93b8-ac1be041f79a", "Elsternwick Station", -37.8843019, 145.0001201),
 
             // St Kilda Victoria
-            new Landmark("", "b6a3839a-02e6-440c-93b0-52db3c530f8f", "Acland Street / Barkley Street", -37.8694453, 144.9805555),
-            new Landmark("", "b6a3839a-02e6-440c-93b0-52db3c530f8f", "The Esplanade", -37.8649231, 144.9726688),
-            new Landmark("", "b6a3839a-02e6-440c-93b0-52db3c530f8f", "St Kilda Station / Fitzroy Street", -37.8593499, 144.9776148),
+            new Landmark("af9935bf-e97c-49ca-b09c-17f1fc1f8453", "b6a3839a-02e6-440c-93b0-52db3c530f8f", "Acland Street / Barkley Street", -37.8694453, 144.9805555),
+            new Landmark("e863542a-ec42-470e-9b28-213f9bac2e34", "b6a3839a-02e6-440c-93b0-52db3c530f8f", "The Esplanade", -37.8649231, 144.9726688),
+            new Landmark("fb6484b6-67cd-4ed5-bad3-b7b3f6fdc782", "b6a3839a-02e6-440c-93b0-52db3c530f8f", "St Kilda Station / Fitzroy Street", -37.8593499, 144.9776148),
         };
     }
 }

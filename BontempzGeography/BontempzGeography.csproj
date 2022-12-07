@@ -8,15 +8,16 @@
 		<Authors>Corey Jensen</Authors>
 		<Company>Bontempz Software</Company>
 		<Title>Bontempz Geography</Title>
-		<Description>BETA release for testing with related applications. Working SqlGeography support.</Description>
+		<Description>.Net 6 NuGet package for basic Geography tasks and conversions</Description>
 		<PackageId>BontempzGeography</PackageId>
-		<Version>6.0.12.2</Version>
+		<Version>6.0.13</Version>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
 		<FileVersion>1.0.0.0</FileVersion>
 		<Copyright>All Rights Reserved - Copyright 2022</Copyright>
 		<PackageLicenseFile>Licensing.txt</PackageLicenseFile>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<IncludeSymbols>True</IncludeSymbols>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -42,6 +43,10 @@
 		<None Update="Licensing.txt">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
+		</None>
+		<None Update="README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
 

@@ -2,8 +2,37 @@
 
 namespace BontempzGeography.Tests
 {
-    public class DistrictListsFiltered
+    public class DistrictsValidation
     {
+        [Fact(DisplayName = "Validate Regional Districts")]
+        public void ValidateRegionalDistricts()
+        {
+            var regionalDistricts = RegionalDistrict.Supported();
+
+            foreach(var district in regionalDistricts)
+            {
+                Guid.Parse(district.Key);
+            }
+
+            Assert.NotNull(regionalDistricts);
+        }
+
+        [Fact(DisplayName = "Validate Municipal Districts")]
+        public void ValidateMunicipalDistricts()
+        {
+            var municipalDistricts = MunicipalDistrict.List();
+
+            Assert.NotNull(municipalDistricts);
+        }
+
+        [Fact(DisplayName = "Validate Landmarks")]
+        public void ValidateLandmarks()
+        {
+            var landmarks = Landmark.List();
+
+            Assert.NotNull(landmarks);
+        }
+
         [Fact(DisplayName = "Validate Melbourne CBD Venues")]
         public void ValidateMelbourneCbdVenues()
         {
