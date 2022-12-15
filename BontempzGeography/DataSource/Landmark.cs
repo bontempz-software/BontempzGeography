@@ -51,13 +51,17 @@ namespace BontempzGeography.DataSource
             // Richmond Victoria
             new Landmark("55c86875-706c-408f-aff3-fb93e53f98fc", "736a634b-96c8-46a2-ba9f-e40b50aadcd1", "Richmond Station", -37.8245822, 144.998001),
             new Landmark("466b89cd-a1d2-43a9-8d23-4ec714e4dc8d", "736a634b-96c8-46a2-ba9f-e40b50aadcd1", "East Richmond Station", -37.8263486, 144.9972507),
-            new Landmark("c8a3aae6-0b07-4e21-9279-9e7d7bc49f35", "736a634b-96c8-46a2-ba9f-e40b50aadcd1", "North Richmond Station", -37.8104, 144.9924),
+            new Landmark("81f14438-0b2c-4afd-b999-0a661782f8b2", "736a634b-96c8-46a2-ba9f-e40b50aadcd1", "West Richmond Station", -37.8134534, 144.9888603),
+            new Landmark("c8a3aae6-0b07-4e21-9279-9e7d7bc49f35", "736a634b-96c8-46a2-ba9f-e40b50aadcd1", "North Richmond Station", -37.810176, 144.992422),
             new Landmark("bf30aa7f-e506-444a-959b-680f31c23fcc", "736a634b-96c8-46a2-ba9f-e40b50aadcd1", "Burnley Station", -37.8275297, 145.0071636),
 
             // Chapel Street Precinct Melbourne
             new Landmark("c5aa7c2b-18ab-453c-93a9-89ec0fe8efa1", "ddb28e0d-5e70-4a67-8f7a-30346db29820", "South Yarra Station", -37.8389876, 144.9922103),
             new Landmark("0a571af3-ba13-4a8d-9b92-856706dc48da", "ddb28e0d-5e70-4a67-8f7a-30346db29820", "Prahran Station", -37.8495187, 144.9898821),
             new Landmark("ebeae039-4838-407f-97d3-10ddecb73fd6", "ddb28e0d-5e70-4a67-8f7a-30346db29820", "Windsor Station", -37.8563445, 144.9924383),
+
+            // Carlisle Street Balaclava Victoria
+            new Landmark("0058a49c-8818-4f65-aadf-0561eb7b66df", "9e584352-722f-4e0d-a75c-73a72d91d5ac", "Balaclava Station", -37.869246, 144.993411),
 
             // Glen Huntly Road Elsternwick Victoria
             new Landmark("b1bfa188-e5bf-4c4c-bdb0-82caa21e4140", "9f865fce-bb67-47a4-93b8-ac1be041f79a", "Elsternwick Station", -37.8843019, 145.0001201),
