@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Authors>Corey Jensen</Authors>
 		<Company>Bontempz Software</Company>
 		<Title>Bontempz Geography</Title>
-		<Description>.Net 6 NuGet package for basic Geography tasks and conversions</Description>
+		<Description>.Net 8 NuGet package for basic Geography tasks and conversions</Description>
 		<PackageId>BontempzGeography</PackageId>
-		<Version>6.0.25</Version>
+		<Version>8.0.0</Version>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
 		<FileVersion>1.0.0.0</FileVersion>
 		<Copyright>All Rights Reserved - Copyright 2022</Copyright>
@@ -21,7 +21,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="6.0.25" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
