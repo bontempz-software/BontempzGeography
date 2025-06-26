@@ -8,12 +8,12 @@
 		<Authors>Corey Jensen</Authors>
 		<Company>Bontempz Software</Company>
 		<Title>Bontempz Geography</Title>
-		<Description>.Net 8 NuGet package for basic Geography tasks and conversions</Description>
+		<Description>.Net 9 NuGet package for basic Geography tasks and conversions</Description>
 		<PackageId>BontempzGeography</PackageId>
-		<Version>9.0.0.0</Version>
+		<Version>9.0.1.0</Version>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
 		<FileVersion>1.0.0.0</FileVersion>
-		<Copyright>All Rights Reserved - Copyright 2022</Copyright>
+		<Copyright>All Rights Reserved - Copyright 2022 - 2025</Copyright>
 		<PackageLicenseFile>Licensing.txt</PackageLicenseFile>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<IncludeSymbols>True</IncludeSymbols>
